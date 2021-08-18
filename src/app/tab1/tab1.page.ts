@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Products } from '../products';
 
 @Component({
   selector: 'app-tab1',
@@ -7,12 +8,20 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+name:any;
+description:any;
+image:any;
 
-  products = {}
-  logForm() 
-  {
-    console.log(this.products)
-  }
+products:Products;
   constructor() {}
+
+
+
+  submit()
+  {
+this.products=new Products(this.name,this.image,this.description);
+
+console.log(this.products);
+  }
 
 }
